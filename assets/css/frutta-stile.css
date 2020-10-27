@@ -17,6 +17,11 @@ button {
     background-color: #24282E;
   }
 
+  html body #app{
+    font-size: 2rem;
+    color: white;
+  }
+
   
   html body h2{
     color: yellow;

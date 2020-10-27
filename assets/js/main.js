@@ -10,7 +10,6 @@ const btnCloseModal = document.querySelector('#btnClose')
 const btnSubmit = document.getElementById('buttonSubmit')
 //bottone applica modifiche
 const btnSave = document.getElementById('buttonModify')
-
 //container della modal
 const modalCourse = document.getElementById('modalContainer')
 //il form
@@ -30,6 +29,21 @@ const courseArray = []
 const ulLista = document.getElementById('.listaCorsi')
 // seleziono lo span per inserire nel futuro il numero di elementi presenti nell'array
 const totCorsi= document.getElementById('totCorsi');
+
+//carica tutti gli eventi
+const load = () => {
+    btnOpenModal.addEventListener('click',handleOpenModal)
+    btnCloseModal.addEventListener('click', handleClose)
+    modalCourse.addEventListener('click', handleCloseFromBack)
+    //formModal.addEventListener('submit', handleAddCourse)
+    //formModal.addEventListener('submit', handleApplyChanges)
+    //ulLista.addEventListener('click', removeCourse)
+    //ulLista.addEventListener('click', handleEditModal)
+    getNumberOfCourse();
+}
+
+load();
+
 
 const getNumberOfCourse = () => {
     const num = courseArray.length;
@@ -83,18 +97,3 @@ const handleAddCourse = (e) => {
     console.log(e);
     
 }
-
-
-//carica tutti gli eventi
-const load = () => {
-    btnOpenModal.addEventListener('click',handleOpenModal)
-    btnCloseModal.addEventListener('click', handleClose)
-    modalCourse.addEventListener('click', handleCloseFromBack)
-    //formModal.addEventListener('submit', handleAddCourse)
-    //formModal.addEventListener('submit', handleApplyChanges)
-    //ulLista.addEventListener('click', removeCourse)
-    //ulLista.addEventListener('click', handleEditModal)
-    getNumberOfCourse();
-}
-
-load();
